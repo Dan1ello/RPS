@@ -2,98 +2,37 @@
 #include <unistd.h>
 using namespace std;
 
-void test()
-{}
-
-void SecTest()
-{}
-
-void results()
-{}
-
-void gamemode()
-{}
-
-void SecGamemode()
-{}
-
-int main()
-{
-	// 1 игрок
-	string fir = "1 игрок выбрал \x1b[96;1mКамень.\x1b[0m\n";
-	string sec = "1 игрок выбрал \x1b[36;1mНожницы.\x1b[0m\n";
-	string thi = "1 игрок выбрал \x1b[36;1mБумагу.\x1b[0m\n";
-	string win = "\x1b[33;1m1 игрок победил\x1b[0m";
+// 1 игрок
+	string pickr = "1 игрок выбрал \x1b[96;1mКамень.\x1b[0m\n";
+	string picks = "1 игрок выбрал \x1b[36;1mНожницы.\x1b[0m\n";
+	string pickp = "1 игрок выбрал \x1b[36;1mБумагу.\x1b[0m\n";
+	string win = "\x1b[33;1m1 игрок победил!\x1b[0m";
+	string fstart = "=========1 ИГРОК==========\nВыберите свое оружие - \x1b[36;1m[1]\x1b[0m\Камень | \x1b[36;1m[2]\x1b[0m\Ножницы | \x1b[36;1m[3]\x1b[0m\Бумага: ";
 
 	// 2 игрок
-	string fi = "2 игрок выбрал \x1b[96;1mКамень.\x1b[0m\n";
-	string se = "2 игрок выбрал \x1b[36;1mНожницы.\x1b[0m\n";
-	string th = "2 игрок выбрал \x1b[36;1mБумагу.\x1b[0m\n";
+	string spickr = "2 игрок выбрал \x1b[96;1mКамень.\x1b[0m\n";
+	string spicks = "2 игрок выбрал \x1b[36;1mНожницы.\x1b[0m\n";
+	string spickp = "2 игрок выбрал \x1b[36;1mБумагу.\x1b[0m\n";
 	string SecWin = "\x1b[33;1m2 игрок победил!\x1b[0m";
+	string sstart = "=========2 ИГРОК==========\nВыберите свое оружие - \x1b[36;1m[1]\x1b[0m\Камень | \x1b[36;1m[2]\x1b[0m\Ножницы | \x1b[36;1m[3]\x1b[0m\Бумага: ";
 
 	// остальное
 	string answer = "Ваш ответ принят.\n";
 	string draw = "\x1b[33;1mНичья!\x1b[0m";
 	string errorEnd = "\x1b[33;1mВ ходе игры была допущена ошибка.\x1b[0m";
 	string error = "Ошибка... Зачем ты это сделал?\n";
+	string start = "Камень-Ножницы-Бумага \x1b[32;1mv1.1beta\x1b[0m\n\n";
+	string result = "\n\x1b[33;1mИгра Завершена: \x1b[0m";
 
 	// вводимые данные
 	int a;
 	int b;
+	int c;
 
-	// ============ НАЧАЛО =============
-	cout << "Камень-Ножницы-Бумага \x1b[32;1mv1.1beta\x1b[0m\n\n";
-	cout << "=========1 ИГРОК==========\nВыберите свое оружие - \x1b[36;1m[1]\x1b[0m\Камень | \x1b[36;1m[2]\x1b[0m\Ножницы | \x1b[36;1m[3]\x1b[0m\Бумага: ";
-	cin >> a;
-	sleep(1);
-
-	switch (a)
-	{
-	case 1:
-		cout << fir;
-		break;
-
-	case 2:
-		cout << sec;
-		break;
-
-	case 3:
-		cout << thi;
-		break;
-
-	default:
-		cout << error;
-		break;
-	}
-
-	// ====== ЧАСТЬ 2 ИГРОКА ======
-
-	cout << "=========2 ИГРОК==========\nВыберите свое оружие - \x1b[36;1m[1]\x1b[0m\Камень | \x1b[36;1m[2]\x1b[0m\Ножницы | \x1b[36;1m[3]\x1b[0m\Бумага: ";
-	cin >> b;
-	sleep(1);
-
-	switch (b)
-	{
-	case 1:
-		cout << fi;
-		break;
-
-	case 2:
-		cout << se;
-		break;
-
-	case 3:
-		cout << th;
-		break;
-
-	default:
-		cout << error;
-		break;
-	}
-
+void end()
+{
 	// ========= РЕЗУЛЬТАТЫ ==========
-
-	cout << "\n\x1b[33;1mИгра Завершена: \x1b[0m";
+	cout << result;
 	if (a == 1 && b == 1)
 	{
 		cout << draw;
@@ -134,4 +73,158 @@ int main()
 	{
 		cout << errorEnd;
 	}
+}
+
+void mode()
+{
+		// ============ НАЧАЛО ==========
+	cout << start;
+	cout << fstart;
+	cin >> a;
+	sleep(1);
+
+	switch (a)
+	{
+	case 1:
+		cout << pickr;
+		break;
+
+	case 2:
+		cout << picks;
+		break;
+
+	case 3:
+		cout << pickp;
+		break;
+
+	default:
+		cout << error;
+		break;
+	}
+
+	// ====== ЧАСТЬ 2 ИГРОКА ======
+
+	cout << sstart;
+	cin >> b;
+	sleep(1);
+
+	switch (b)
+	{
+	case 1:
+		cout << spickr;
+		break;
+
+	case 2:
+		cout << spicks;
+		break;
+
+	case 3:
+		cout << spickp;
+		break;
+
+	default:
+		cout << error;
+		break;
+	}
+}
+
+void modeAI()
+{
+	// ============ НАЧАЛО ==========
+	cout << start;
+	cout << fstart;
+	cin >> a;
+	sleep(1);
+
+	switch (a)
+	{
+	case 1:
+		cout << pickr;
+		break;
+
+	case 2:
+		cout << picks;
+		break;
+
+	case 3:
+		cout << pickp;
+		break;
+
+	default:
+		cout << error;
+		break;
+	}
+
+	// ====== ЧАСТЬ 2 ИГРОКА ======
+
+	cout << sstart;
+	cin >> b;
+	sleep(1);
+
+	switch (b)
+	{
+	case 1:
+		cout << spickr;
+		break;
+
+	case 2:
+		cout << spicks;
+		break;
+
+	case 3:
+		cout << spickp;
+		break;
+
+	default:
+		cout << error;
+		break;
+	}
+}
+
+void modeEn()
+{}
+
+void modeEnAI()
+{}
+
+int main()
+{
+cout << "==========ВЫБЕРИТЕ РЕЖИМ============\n";
+cout << "1)Стандартный (Человек vs Человек)\n";
+cout << "2)Против ИИ";
+cout << "\n==========CHOOSE GAMEMODE===========\n";
+cout << "3)Default (Person vs Person)\n";
+cout << "4)vs AI\n====================================\n5)Quit/Выйти\n\n >> ";
+
+cin >> c;
+switch (c)
+{
+	case 1:
+	mode();
+	end();
+	break;
+	
+	case 2:
+	modeAI();
+	end();
+	break;
+	
+	case 3:
+	modeEn();
+	end();
+	break;
+	
+	case 4:
+	modeEnAI();
+	end();
+	break;
+	
+	case 5:
+	cout << "Скоро увидимся, до встречи ;)";
+	break;
+	
+	default:
+	cout << "На ваш аккаунт Brawl Stars зачислено 9999 гемов.";
+	break;
+}
 }
