@@ -3,17 +3,17 @@
 using namespace std;
 
 // 1 игрок
-	string pickr = "1 игрок выбрал \x1b[96;1mКамень.\x1b[0m\n";
-	string picks = "1 игрок выбрал \x1b[36;1mНожницы.\x1b[0m\n";
-	string pickp = "1 игрок выбрал \x1b[36;1mБумагу.\x1b[0m\n";
+	string pickr = "Вы выбрали \x1b[96;1mКамень.\x1b[0m\n";
+	string picks = "Вы выбрали \x1b[36;1mНожницы.\x1b[0m\n";
+	string pickp = "Вы выбрали \x1b[36;1mБумагу.\x1b[0m\n";
 	string win = "\x1b[33;1m1 игрок победил!\x1b[0m";
 	string fstart = "=========1 ИГРОК==========\nВыберите свое оружие - \x1b[36;1m[1]\x1b[0m\Камень | \x1b[36;1m[2]\x1b[0m\Ножницы | \x1b[36;1m[3]\x1b[0m\Бумага: ";
 
 	// 2 игрок
-	string spickr = "2 игрок выбрал \x1b[96;1mКамень.\x1b[0m\n";
-	string spicks = "2 игрок выбрал \x1b[36;1mНожницы.\x1b[0m\n";
-	string spickp = "2 игрок выбрал \x1b[36;1mБумагу.\x1b[0m\n";
-	string SecWin = "\x1b[33;1m2 игрок победил!\x1b[0m";
+	string spickr = "Компьютер выбрал \x1b[96;1mКамень!\x1b[0m\n";
+	string spicks = "Компьютер выбрал \x1b[36;1mНожницы!\x1b[0m\n";
+	string spickp = "Компьютер выбрал... \x1b[36;1mБумагу!\x1b[0m\n";
+	string SecWin = "\x1b[33;1mИИ победил!\x1b[0m";
 	string sstart = "=========2 ИГРОК==========\nВыберите свое оружие - \x1b[36;1m[1]\x1b[0m\Камень | \x1b[36;1m[2]\x1b[0m\Ножницы | \x1b[36;1m[3]\x1b[0m\Бумага: ";
 
 	// остальное
@@ -86,15 +86,15 @@ void mode()
 	switch (a)
 	{
 	case 1:
-		cout << pickr;
+		cout << answer;
 		break;
 
 	case 2:
-		cout << picks;
+		cout << answer;
 		break;
 
 	case 3:
-		cout << pickp;
+		cout << answer;
 		break;
 
 	default:
@@ -111,15 +111,15 @@ void mode()
 	switch (b)
 	{
 	case 1:
-		cout << spickr;
+		cout << answer;
 		break;
 
 	case 2:
-		cout << spicks;
+		cout << answer;
 		break;
 
 	case 3:
-		cout << spickp;
+		cout << answer;
 		break;
 
 	default:
@@ -130,62 +130,15 @@ void mode()
 
 void modeAI()
 {
-	// ============ НАЧАЛО ==========
-	cout << start;
-	cout << fstart;
-	cin >> a;
-	sleep(1);
-
-	switch (a)
-	{
-	case 1:
-		cout << pickr;
-		break;
-
-	case 2:
-		cout << picks;
-		break;
-
-	case 3:
-		cout << pickp;
-		break;
-
-	default:
-		cout << error;
-		break;
-	}
-
-	// ====== ЧАСТЬ 2 ИГРОКА ======
-
-	cout << sstart;
-	cin >> b;
-	sleep(1);
-
-	switch (b)
-	{
-	case 1:
-		cout << spickr;
-		break;
-
-	case 2:
-		cout << spicks;
-		break;
-
-	case 3:
-		cout << spickp;
-		break;
-
-	default:
-		cout << error;
-		break;
-	}
 }
 
 void modeEn()
-{}
+{
+}
 
 void modeEnAI()
-{}
+{
+}
 
 int main()
 {
@@ -220,7 +173,7 @@ switch (c)
 	break;
 	
 	case 5:
-	cout << "Скоро увидимся, до встречи ;)";
+	cout << "Скоро увидимся ;)";
 	break;
 	
 	default:
