@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unistd.h>
+#include <cstdlib>
 using namespace std;
 
 // 1 игрок
@@ -7,14 +8,14 @@ using namespace std;
 	string picks = "Вы выбрали \x1b[36;1mНожницы.\x1b[0m\n";
 	string pickp = "Вы выбрали \x1b[36;1mБумагу.\x1b[0m\n";
 	string win = "\x1b[33;1m1 игрок победил!\x1b[0m";
-	string fstart = "=========1 ИГРОК==========\nВыберите свое оружие - \x1b[36;1m[1]\x1b[0m\Камень | \x1b[36;1m[2]\x1b[0m\Ножницы | \x1b[36;1m[3]\x1b[0m\Бумага: ";
+	string fstart = "=========1 ИГРОК==========\nВыберите свое оружие - \x1b[36;1m[1]\x1b[0mКамень | \x1b[36;1m[2]\x1b[0mНожницы | \x1b[36;1m[3]\x1b[0mБумага: ";
 
 	// 2 игрок
 	string spickr = "Компьютер выбрал \x1b[96;1mКамень!\x1b[0m\n";
 	string spicks = "Компьютер выбрал \x1b[36;1mНожницы!\x1b[0m\n";
 	string spickp = "Компьютер выбрал... \x1b[36;1mБумагу!\x1b[0m\n";
 	string SecWin = "\x1b[33;1mИИ победил!\x1b[0m";
-	string sstart = "=========2 ИГРОК==========\nВыберите свое оружие - \x1b[36;1m[1]\x1b[0m\Камень | \x1b[36;1m[2]\x1b[0m\Ножницы | \x1b[36;1m[3]\x1b[0m\Бумага: ";
+	string sstart = "=========2 ИГРОК==========\nВыберите свое оружие - \x1b[36;1m[1]\x1b[0mКамень | \x1b[36;1m[2]\x1b[0mНожницы | \x1b[36;1m[3]\x1b[0mБумага: ";
 
 	// остальное
 	string answer = "Ваш ответ принят.\n";
@@ -28,6 +29,7 @@ using namespace std;
 	int a;
 	int b;
 	int c;
+	int ai;
 
 void end()
 {
@@ -73,6 +75,56 @@ void end()
 	{
 		cout << errorEnd;
 	}
+}
+
+void endAi()
+{
+	// ========= РЕЗУЛЬТАТЫ ==========
+	srand(time(0));
+	int ai = (rand()%3+1);
+	cout << result;
+	if (a == 1 && ai == 1)
+	{
+		cout << draw;
+	}
+	else if (a == 1 && ai == 2)
+	{
+		cout << win;
+	}
+	else if (a == 1 && ai == 3)
+	{
+		cout << SecWin;
+	}
+	else if (a == 2 && ai == 1)
+	{
+		cout << SecWin;
+	}
+	else if (a == 2 && ai == 2)
+	{
+		cout << draw;
+	}
+	else if (a == 2 && ai == 3)
+	{
+		cout << win;
+	}
+	else if (a == 3 && ai == 1)
+	{
+		cout << win;
+	}
+	else if (a == 3 && ai == 2)
+	{
+		cout << SecWin;
+	}
+	else if (a == 3 && ai == 3)
+	{
+		cout << draw;
+	}
+	else
+	{
+		cout << errorEnd;
+	}
+	cout << ai;
+	cout << a;
 }
 
 void mode()
@@ -130,6 +182,29 @@ void mode()
 
 void modeAI()
 {
+	cout << start;
+	cout << fstart;
+	cin >> a;
+	sleep(1);
+
+	switch (a)
+	{
+	case 1:
+		cout << answer;
+		break;
+
+	case 2:
+		cout << answer;
+		break;
+
+	case 3:
+		cout << answer;
+		break;
+
+	default:
+		cout << error;
+		break;
+	}
 }
 
 void modeEn()
@@ -159,7 +234,7 @@ switch (c)
 	
 	case 2:
 	modeAI();
-	end();
+	endAi();
 	break;
 	
 	case 3:
@@ -169,7 +244,7 @@ switch (c)
 	
 	case 4:
 	modeEnAI();
-	end();
+	endAi();
 	break;
 	
 	case 5:
