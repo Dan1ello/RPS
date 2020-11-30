@@ -2,8 +2,7 @@
 #include <unistd.h>
 #include <cstdlib>
 using namespace std;
-//RPS - BY DAN1ELLO
-//github.com/dan1ello/rps
+// github.com/dan1ello/rps
 // 1 игрок
 string pickr = "Вы выбрали \x1b[96;1mКамень.\x1b[0m\n";
 string picks = "Вы выбрали \x1b[36;1mНожницы.\x1b[0m\n";
@@ -12,10 +11,7 @@ string win = "\x1b[33;1m1 игрок победил!\x1b[0m";
 string AIWin = "\x1b[33;1mИгрок победил!\x1b[0m";
 string fstart = "=========1 ИГРОК==========\nВыберите свое оружие - \x1b[36;1m[1]\x1b[0mКамень | \x1b[36;1m[2]\x1b[0mНожницы | \x1b[36;1m[3]\x1b[0mБумага: ";
 
-// 2 игрок (ИИ)
-string spickr = "Компьютер выбрал... \x1b[96;1mКамень!\x1b[0m\n";
-string spicks = "Компьютер выбрал... \x1b[36;1mНожницы!\x1b[0m\n";
-string spickp = "Компьютер выбрал... \x1b[36;1mБумагу!\x1b[0m\n";
+// 2 игрок
 string SecWin = "\x1b[33;1m2 игрок победил!\x1b[0m";
 string AISecWin = "\x1b[33;1mИИ победил!\x1b[0m";
 string sstart = "=========2 ИГРОК==========\nВыберите свое оружие - \x1b[36;1m[1]\x1b[0mКамень | \x1b[36;1m[2]\x1b[0mНожницы | \x1b[36;1m[3]\x1b[0mБумага: ";
@@ -42,10 +38,7 @@ string ENwin = "\x1b[33;1m1 player win!\x1b[0m";
 string ENAIWin = "\x1b[33;1mPlayer win!\x1b[0m";
 string ENfstart = "=========1 PLAYER==========\nChoose your weapon - \x1b[36;1m[1]\x1b[0mRock | \x1b[36;1m[2]\x1b[0mScissors | \x1b[36;1m[3]\x1b[0mPaper ";
 
-// 2 player (AI)
-string ENspickr = "Сomputer chose... \x1b[96;1mRock!\x1b[0m\n";
-string ENspicks = "Сomputer chose... \x1b[36;1mScissors!\x1b[0m\n";
-string ENspickp = "Сomputer chose... \x1b[36;1mPaper!\x1b[0m\n";
+// 2 player
 string ENSecWin = "\x1b[33;1m2 player win!\x1b[0m";
 string ENAISecWin = "\x1b[33;1mAI Win!\x1b[0m";
 string ENsstart = "=========2 PLAYER==========\nChoose your weapon - \x1b[36;1m[1]\x1b[0mRock | \x1b[36;1m[2]\x1b[0mScissors | \x1b[36;1m[3]\x1b[0mPaper ";
@@ -65,10 +58,7 @@ string ENpaper = "\x1b[34;1mPaper\x1b[0m)";
 string ENscissors = "\x1b[34;1mScissors\x1b[0m)";
 
 // вводимые данные
-int a;
-int b;
-int c;
-int ai;
+int a, b, c, ai;
 
 void end()
 {
@@ -574,7 +564,7 @@ int main()
 {
 	cout << start << endl
 		 << ENstart << endl
-		 << "--------\n\x1b[32;1mv1.1\x1b[0m" << endl;
+		 << "--------\n\x1b[32;1mv1.2\x1b[0m" << endl;
 	cout << "==========ВЫБЕРИТЕ РЕЖИМ============\n";
 	cout << "1)Стандартный (Человек vs Человек)\n";
 	cout << "2)Против ИИ";
