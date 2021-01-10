@@ -1,4 +1,3 @@
-# спс за дай модуль
 import logging
 import requests
 from .. import loader, utils
